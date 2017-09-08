@@ -95,7 +95,8 @@
 <meta property="og:site_name" content="Hong">
 <meta property="og:description" content="1.准备工作1.1 硬件开发板我这边选择的是NodeMCU开发板，基于安信可的ESP-12F模块，一根USB线解决供电、烧录、打印功能。 1.2 编译环境配置编译环境的配置方式有两种：  编译环境可以到乐鑫官网去下载linux编译镜像。  只下载编译器，自己去配置开发环境（linux平台），可参考此处。  2. 编译ESP8266提供了两个版本的SDK，分别是ESP8266_NONOS_SDK和E">
 <meta property="og:image" content="https://i.imgur.com/4lg0LN7.jpg">
-<meta property="og:updated_time" content="2017-09-08T01:53:15.343Z">
+<meta property="og:image" content="https://i.imgur.com/aWg281j.png">
+<meta property="og:updated_time" content="2017-09-08T06:44:38.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ESP8266开发之前期准备">
 <meta name="twitter:description" content="1.准备工作1.1 硬件开发板我这边选择的是NodeMCU开发板，基于安信可的ESP-12F模块，一根USB线解决供电、烧录、打印功能。 1.2 编译环境配置编译环境的配置方式有两种：  编译环境可以到乐鑫官网去下载linux编译镜像。  只下载编译器，自己去配置开发环境（linux平台），可参考此处。  2. 编译ESP8266提供了两个版本的SDK，分别是ESP8266_NONOS_SDK和E">
@@ -298,7 +299,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T09:53:15+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T14:44:38+08:00">
                 2017-09-08
               </time>
             
@@ -395,8 +396,14 @@
 <li>编译环境可以到乐鑫官网去下载<a href="http://downloads.espressif.com/FB/ESP8266_GCC.zip" target="_blank" rel="external">linux编译镜像</a>。 </li>
 <li>只下载编译器，自己去配置开发环境（linux平台），可参考<a href="https://github.com/pfalcon/esp-open-sdk" target="_blank" rel="external">此处</a>。</li>
 </ol>
-<h1 id="2-编译"><a href="#2-编译" class="headerlink" title="2. 编译"></a>2. 编译</h1><p>ESP8266提供了两个版本的SDK，分别是ESP8266_NONOS_SDK和ESP8266_RTOS_SDK，这里我选择了NONOS_SDK，因为其比较简单，且网上基于它开发的资源比较多。RTOS_SDK是后来才提供的，相对资料少点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[hhz@glinks-server-1 ESP8266_NONOS_SDK]$ ls</div><div class="line">bin  documents  driver_lib  examples  include  ld  lib  License  Makefile  README.md  third_party  tools  VERSION</div></pre></td></tr></table></figure>
+<h1 id="2-编译"><a href="#2-编译" class="headerlink" title="2. 编译"></a>2. 编译</h1><p>ESP8266提供了两个版本的SDK，分别是ESP8266_NONOS_SDK和ESP8266_RTOS_SDK，这里我选择了ESP8266_NONOS_SDK，因为其比较简单，且网上基于它开发的资源比较多。RTOS_SDK是后来才提供的，资料相对少点。</p>
+<p>首先，进入SDK根目录，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[hhz@glinks-server-1 ESP8266_NONOS_SDK]$ ls</div><div class="line">bin  documents  driver_lib  examples  include  ld  lib  License  Makefile  </div><div class="line">README.md  third_party  tools  VERSION</div></pre></td></tr></table></figure></p>
+<p>从examples目录随便复制一个工程到根目录文件夹，这里我已smart_config为例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[hhz@glinks-server-1 ESP8266_NONOS_SDK]$ ls</div><div class="line">bin  documents  driver_lib  examples  include  ld  lib  License  Makefile  </div><div class="line">README.md  smart_config  third_party  tools  VERSION</div></pre></td></tr></table></figure><br>然后进入到smart_config目录，执行./gen_misc.sh即可。为了方便起见，我们修改gen_misc.sh文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">boot=new</div><div class="line">app=1</div><div class="line">spi_speed=40</div><div class="line">spi_mode=QIO</div><div class="line">spi_size_map=6</div><div class="line"></div><div class="line">touch user/user_main.c</div><div class="line"></div><div class="line">echo &quot;&quot;</div><div class="line">echo &quot;start...&quot;</div><div class="line">echo &quot;&quot;</div><div class="line"></div><div class="line">make COMPILE=gcc BOOT=$boot APP=$app SPI_SPEED=$spi_speed SPI_MODE=$spi_mode SPI_SIZE_MAP=$spi_size_map</div></pre></td></tr></table></figure>
+<p>这样就不用每次去配置编译选项了。最后生成的文件如下，通过烧录工具将其烧录到开发板即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">!!!</div><div class="line">No boot needed.</div><div class="line">Generate eagle.flash.bin and eagle.irom0text.bin successully in folder bin.</div><div class="line">eagle.flash.bin--------&gt;0x00000</div><div class="line">eagle.irom0text.bin----&gt;0x10000</div><div class="line">!!!</div></pre></td></tr></table></figure></p>
+<h1 id="3-烧录"><a href="#3-烧录" class="headerlink" title="3. 烧录"></a>3. 烧录</h1><p>首先，去乐鑫官网下载<a href="http://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.4.9.2_1.zip" target="_blank" rel="external">烧录软件</a>（Windows版）。将开发板通过USB线与电脑相连，打开烧录软件选择相应的COM端口，串口波特率可以随便设定，这里我选择115200，选择好相应的文件，点击START，复位开发板开始烧录（<br><strong>千万注意烧录地址不要填错了</strong>）<br><img src="https://i.imgur.com/aWg281j.png" alt=""></p>
+<hr>
+
       
     </div>
 
@@ -552,7 +559,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -607,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-准备工作"><span class="nav-text">1.准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-硬件开发板"><span class="nav-text">1.1 硬件开发板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-编译环境配置"><span class="nav-text">1.2 编译环境配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-编译"><span class="nav-text">2. 编译</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-准备工作"><span class="nav-text">1.准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-硬件开发板"><span class="nav-text">1.1 硬件开发板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-编译环境配置"><span class="nav-text">1.2 编译环境配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-编译"><span class="nav-text">2. 编译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-烧录"><span class="nav-text">3. 烧录</span></a></li></ol></div>
             
 
           </div>
