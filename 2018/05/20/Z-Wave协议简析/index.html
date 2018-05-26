@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ESP8266," />
+  <meta name="keywords" content="Z-Wave," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="1. MQTT服务器mqtt broker有很多，有Mosquitto、EMQ等等，在这里我就不做介绍了，可以去官网看看，中文资料也比较齐全。这里我选择Mosquitto作为我的broker服务器，如何配置参考这里。 2. MQTT设备端用ESP8266开发MQTT程序非常的简单，因为在其例程中已为我们提供了MQTT库及参考示例，我们只要在其基础之上少做修改即可。">
-<meta name="keywords" content="ESP8266">
+<meta name="description" content="1 Z-Wave网络角色在一个Z-Wave网络中拥有两种类型的设备:Controller &amp;amp; Slave。 1.1 ControllersController拥有完整的设备路由表，因此它可以和网络中所有的设备节点通信。Controller的功能会根据其何时进入网络而有所不同。例如，一个被用来创建网络的Controller将成为一个primary controller，其在网络中有且只有一个">
+<meta name="keywords" content="Z-Wave">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ESP8266开发之MQTT">
-<meta property="og:url" content="http://blog.godoit.xyz/2017/09/07/ESP8266开发之MQTT/index.html">
+<meta property="og:title" content="Z-Wave协议简析">
+<meta property="og:url" content="http://blog.godoit.xyz/2018/05/20/Z-Wave协议简析/index.html">
 <meta property="og:site_name" content="godoit">
-<meta property="og:description" content="1. MQTT服务器mqtt broker有很多，有Mosquitto、EMQ等等，在这里我就不做介绍了，可以去官网看看，中文资料也比较齐全。这里我选择Mosquitto作为我的broker服务器，如何配置参考这里。 2. MQTT设备端用ESP8266开发MQTT程序非常的简单，因为在其例程中已为我们提供了MQTT库及参考示例，我们只要在其基础之上少做修改即可。">
-<meta property="og:updated_time" content="2017-09-14T07:34:20.065Z">
+<meta property="og:description" content="1 Z-Wave网络角色在一个Z-Wave网络中拥有两种类型的设备:Controller &amp;amp; Slave。 1.1 ControllersController拥有完整的设备路由表，因此它可以和网络中所有的设备节点通信。Controller的功能会根据其何时进入网络而有所不同。例如，一个被用来创建网络的Controller将成为一个primary controller，其在网络中有且只有一个">
+<meta property="og:updated_time" content="2018-05-26T07:20:59.605Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ESP8266开发之MQTT">
-<meta name="twitter:description" content="1. MQTT服务器mqtt broker有很多，有Mosquitto、EMQ等等，在这里我就不做介绍了，可以去官网看看，中文资料也比较齐全。这里我选择Mosquitto作为我的broker服务器，如何配置参考这里。 2. MQTT设备端用ESP8266开发MQTT程序非常的简单，因为在其例程中已为我们提供了MQTT库及参考示例，我们只要在其基础之上少做修改即可。">
+<meta name="twitter:title" content="Z-Wave协议简析">
+<meta name="twitter:description" content="1 Z-Wave网络角色在一个Z-Wave网络中拥有两种类型的设备:Controller &amp;amp; Slave。 1.1 ControllersController拥有完整的设备路由表，因此它可以和网络中所有的设备节点通信。Controller的功能会根据其何时进入网络而有所不同。例如，一个被用来创建网络的Controller将成为一个primary controller，其在网络中有且只有一个">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.godoit.xyz/2017/09/07/ESP8266开发之MQTT/"/>
+  <link rel="canonical" href="http://blog.godoit.xyz/2018/05/20/Z-Wave协议简析/"/>
 
 
 
 
 
-  <title> ESP8266开发之MQTT | godoit </title>
+  <title> Z-Wave协议简析 | godoit </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.godoit.xyz/2017/09/07/ESP8266开发之MQTT/">
+    <link itemprop="mainEntityOfPage" href="http://blog.godoit.xyz/2018/05/20/Z-Wave协议简析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hong">
@@ -281,7 +281,7 @@
             
             
               
-                ESP8266开发之MQTT
+                Z-Wave协议简析
               
             
           </h1>
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T15:00:00+08:00">
-                2017-09-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T13:14:00+08:00">
+                2018-05-20
               </time>
             
 
@@ -319,8 +319,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
-                    <span itemprop="name">嵌入式</span>
+                  <a href="/categories/IoT/" itemprop="url" rel="index">
+                    <span itemprop="name">IoT</span>
                   </a>
                 </span>
 
@@ -330,8 +330,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/嵌入式/ESP8266/" itemprop="url" rel="index">
-                    <span itemprop="name">ESP8266</span>
+                  <a href="/categories/IoT/Z-Wave/" itemprop="url" rel="index">
+                    <span itemprop="name">Z-Wave</span>
                   </a>
                 </span>
 
@@ -348,9 +348,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/07/ESP8266开发之MQTT/#comments" itemprop="discussionUrl">
+                <a href="/2018/05/20/Z-Wave协议简析/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/07/ESP8266开发之MQTT/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/05/20/Z-Wave协议简析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -358,7 +358,7 @@
 
           
           
-             <span id="/2017/09/07/ESP8266开发之MQTT/" class="leancloud_visitors" data-flag-title="ESP8266开发之MQTT">
+             <span id="/2018/05/20/Z-Wave协议简析/" class="leancloud_visitors" data-flag-title="Z-Wave协议简析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,8 +387,23 @@
       
 
       
-        <h1 id="1-MQTT服务器"><a href="#1-MQTT服务器" class="headerlink" title="1. MQTT服务器"></a>1. MQTT服务器</h1><p>mqtt broker有很多，有<a href="https://mosquitto.org/" target="_blank" rel="external">Mosquitto</a>、<a href="http://emqtt.com/" target="_blank" rel="external">EMQ</a>等等，在这里我就不做介绍了，可以去官网看看，中文资料也比较齐全。这里我选择Mosquitto作为我的broker服务器，如何配置参考<a href="https://docs.loraserver.io/overview/" target="_blank" rel="external">这里</a>。</p>
-<h1 id="2-MQTT设备端"><a href="#2-MQTT设备端" class="headerlink" title="2. MQTT设备端"></a>2. MQTT设备端</h1><p>用ESP8266开发MQTT程序非常的简单，因为在其例程中已为我们提供了MQTT库及参考示例，我们只要在其基础之上少做修改即可。</p>
+        <h1 id="1-Z-Wave网络角色"><a href="#1-Z-Wave网络角色" class="headerlink" title="1 Z-Wave网络角色"></a>1 Z-Wave网络角色</h1><p>在一个Z-Wave网络中拥有两种类型的设备:Controller &amp; Slave。</p>
+<h2 id="1-1-Controllers"><a href="#1-1-Controllers" class="headerlink" title="1.1 Controllers"></a>1.1 Controllers</h2><p>Controller拥有完整的设备路由表，因此它可以和网络中所有的设备节点通信。Controller的功能会根据其何时进入网络而有所不同。例如，一个被用来创建网络的Controller将成为一个primary controller，其在网络中有且只有一个。在Z-Wave网络中，只有primary controller具有添加、删除节点的功能。因此，它保持拥有着最新的网络拓扑结构。其他通过primary controller添加进Z-Wave网络的controller称为secondary controller，其没有添加、删除节点的能力。</p>
+<h3 id="Portable-Controller"><a href="#Portable-Controller" class="headerlink" title="Portable Controller"></a>Portable Controller</h3><p>可移动的Controller，通常为电池供电。</p>
+<h3 id="Static-Controller"><a href="#Static-Controller" class="headerlink" title="Static Controller"></a>Static Controller</h3><p>不可移动，长供电。</p>
+<h3 id="Installer-Controller"><a href="#Installer-Controller" class="headerlink" title="Installer Controller"></a>Installer Controller</h3><p>它是一个Portable Controller，但可能比Portable Controller稍微多出来一点功能。</p>
+<h3 id="Bridge-Controller"><a href="#Bridge-Controller" class="headerlink" title="Bridge Controller"></a>Bridge Controller</h3><p>An extended static controller.</p>
+<h2 id="1-2-Slaves"><a href="#1-2-Slaves" class="headerlink" title="1.2 Slaves"></a>1.2 Slaves</h2><h1 id="2-如何进行开发"><a href="#2-如何进行开发" class="headerlink" title="2 如何进行开发"></a>2 如何进行开发</h1><p>拿到一款产品定义之后，我们要知道如何进行开发，下面有一些步骤：</p>
+<ol>
+<li>根据产品定义选择最合适的Device Type</li>
+<li>选择对应的Role Type</li>
+<li>根据选定的Device Type和Role Type定义Command Classes</li>
+<li>Recommended Feature</li>
+<li>Additional Feature</li>
+</ol>
+<h1 id="3-设备类型-Device-Type"><a href="#3-设备类型-Device-Type" class="headerlink" title="3 设备类型(Device Type)"></a>3 设备类型(Device Type)</h1><p>Z-Wave Plus Info Command Class必须被放在NIF的Command Class列表的最前端，用以来区分设备是一个Z-Wave Device，还是一个Z-Wave Plus Device。</p>
+<p>Device Type由两个字节表示，由Z-Wave Generic Device Class 和 Z-Wave Specific Device Class组成。</p>
+<h1 id="4-模块的烧录接口"><a href="#4-模块的烧录接口" class="headerlink" title="4 模块的烧录接口"></a>4 模块的烧录接口</h1><p>Z-Wave模块的烧录接口包含SPI、UART、USB，但不同模块提供的接口是不同的。尽可能的使用SPI接口。另外，如果想使用USB接口烧录固件，那么要烧录的模块必须已经烧录过支持USB通信功能的代码，及必须通过SPI/UART先烧录过支持USB工能的代码，后面才可以通过USB来烧录或升级固件。</p>
 
       
     </div>
@@ -423,7 +438,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ESP8266/" rel="tag"># ESP8266</a>
+            <a href="/tags/Z-Wave/" rel="tag"># Z-Wave</a>
           
         </div>
       
@@ -436,18 +451,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/07/ESP8266开发之cJSON/" rel="next" title="ESP8266开发之cJSON">
-                <i class="fa fa-chevron-left"></i> ESP8266开发之cJSON
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/08/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/20/Z-Wave_Modules/" rel="prev" title="Z-Wave Modules">
+                Z-Wave Modules <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -604,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-MQTT服务器"><span class="nav-text">1. MQTT服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-MQTT设备端"><span class="nav-text">2. MQTT设备端</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Z-Wave网络角色"><span class="nav-text">1 Z-Wave网络角色</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Controllers"><span class="nav-text">1.1 Controllers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Portable-Controller"><span class="nav-text">Portable Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Static-Controller"><span class="nav-text">Static Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Installer-Controller"><span class="nav-text">Installer Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bridge-Controller"><span class="nav-text">Bridge Controller</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Slaves"><span class="nav-text">1.2 Slaves</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-如何进行开发"><span class="nav-text">2 如何进行开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-设备类型-Device-Type"><span class="nav-text">3 设备类型(Device Type)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-模块的烧录接口"><span class="nav-text">4 模块的烧录接口</span></a></li></ol></div>
             
 
           </div>
@@ -750,9 +761,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://blog.godoit.xyz/2017/09/07/ESP8266开发之MQTT/';
-          this.page.identifier = '2017/09/07/ESP8266开发之MQTT/';
-          this.page.title = 'ESP8266开发之MQTT';
+          this.page.url = 'http://blog.godoit.xyz/2018/05/20/Z-Wave协议简析/';
+          this.page.identifier = '2018/05/20/Z-Wave协议简析/';
+          this.page.title = 'Z-Wave协议简析';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Aamir.disqus.com/embed.js';

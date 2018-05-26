@@ -257,6 +257,784 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.godoit.xyz/2018/05/20/Z-Wave_CC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="godoit">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/05/20/Z-Wave_CC/" itemprop="url">
+                  Z-Wave Command Class
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T13:14:00+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IoT/" itemprop="url" rel="index">
+                    <span itemprop="name">IoT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IoT/Z-Wave/" itemprop="url" rel="index">
+                    <span itemprop="name">Z-Wave</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/20/Z-Wave_CC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/20/Z-Wave_CC/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/20/Z-Wave_CC/" class="leancloud_visitors" data-flag-title="Z-Wave Command Class">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://i.imgur.com/JJaR4E4.png" alt=""></p>
+<h1 id="All-Switch-OBSOLETED"><a href="#All-Switch-OBSOLETED" class="headerlink" title="All Switch [OBSOLETED]"></a>All Switch [OBSOLETED]</h1><p>New implementations MUST NOT support this Command Class. Controlling nodes MUST use S2 Multicast mechanism in order to achieve the All On and All Off functionality</p>
+<h1 id="Basic-CC"><a href="#Basic-CC" class="headerlink" title="Basic CC"></a>Basic CC</h1><p>The Basic Command Class MUST NOT be advertised in the Node Information Frame.</p>
+<p>The Basic Command Class MUST NOT be advertised in the Security Commands Supported Report (S0 as well as S2)</p>
+<p>A securely included node MAY support the Basic Command Class at the highest security level but it MUST NOT support the Basic Command Class at any lower security level or non-securely.</p>
+<h1 id="Association-CC"><a href="#Association-CC" class="headerlink" title="Association CC"></a>Association CC</h1><h1 id="Association-Group-Information-CC-AGI"><a href="#Association-Group-Information-CC-AGI" class="headerlink" title="Association Group Information CC (AGI)"></a>Association Group Information CC (AGI)</h1><p>If a node implements Multi Channel End Points and supports the AGI Command Class, each individual End Point MUST support the AGI Command Class.</p>
+<p>A manufacturer MAY add additional commands to the Lifeline group. Refer to </p>
+<blockquote>
+<p>Sigma Designs, SDS11847, Z-Wave Plus Device Types Specification.</p>
+</blockquote>
+<p>A node MAY send additional commands via the lifeline association group to reflect the state of the node. A node MUST NOT send the following via the lifeline:</p>
+<ul>
+<li>Obsoleted commands or commands belonging to an obsoleted Command Class</li>
+<li>Set or Get commands</li>
+<li>Redundant commands. (for example, if Multilevel Switch CC and Window Covering CC provide the same functionality for a node, the node MUST NOT send both Multilevel Switch Report and Window Covering Report)</li>
+</ul>
+<h3 id="Profile"><a href="#Profile" class="headerlink" title="Profile"></a>Profile</h3><ul>
+<li>General profiles</li>
+<li>Control profiles</li>
+<li>Sensor profiles</li>
+<li>Notification profiles</li>
+</ul>
+<h1 id="Multi-Channel-CC"><a href="#Multi-Channel-CC" class="headerlink" title="Multi Channel CC"></a>Multi Channel CC</h1><p>A node supporting this Command Class MUST set the Optional Functionality bit in its NIF.</p>
+<p>A Multi Channel device MAY implement from 1 to 127 end points.</p>
+<p>A Multi Channel device MUST implement all application functionality in End Points. </p>
+<p>Multi Channel Encapsulation is not used between Root Devices.</p>
+<p>A controlling device MAY use Multi Channel encapsulation to communicate with Multi Channel End Points in other devices. If such a controlling device does not implement any End Points, the device MUST NOT advertise the Multi Channel Command Class in the Node Information Frame.</p>
+<p>It is seen that the mapping of application functionality to the Root Device depends heavily on the actual product feature set. However, a few principles apply:</p>
+<ol>
+<li>The Root Device provides access to the primary functionality of the actual product.</li>
+<li>The Root Device of a Multi Channel device does not implement any application functionality that cannot be reached via End Points.</li>
+<li>The Root Device of a Multi Channel always presents functionality, which can also be reached via End Point 1. If it makes sense in the actual product, a Root Device command may affect more End Points than End Point 1.</li>
+</ol>
+<p>The Root Device SHOULD NOT advertise the application functionality of any dynamic End Point.</p>
+<p>The Root Device of a Multi Channel device MUST NOT advertise any application functionality that cannot be reached via one or more End Points.</p>
+<h1 id="Multi-Channel-Association-CC"><a href="#Multi-Channel-Association-CC" class="headerlink" title="Multi Channel Association CC"></a>Multi Channel Association CC</h1><p>A controlling device SHOULD NOT create End Point associations to dynamic Multi Channel End Points.</p>
+<p>End Points SHOULD NOT implement the Lifeline Association Group. End Points SHOULD report that zero NodeIDs are supported for association group 1</p>
+<h1 id="Wake-Up-CC"><a href="#Wake-Up-CC" class="headerlink" title="Wake Up CC"></a>Wake Up CC</h1><p>The Wake Up period starts when the supporting node issues a Wake Up Notification and it ends either 10 seconds after the last received/transmitted frame or at the reception of a Wake Up No More Information Command by the Wake Up destination.</p>
+<p>The Wake Up Notification Command Class MUST NOT be covered by any association group. This also means that the Wake Up Notification Command Class MUST NOT be covered by the Lifeline association group.</p>
+<p>A node sending periodical or triggered unsolicited commands at the same time it wakes up SHOULD send the unsolicited commands before the Wake Up Notification Command.</p>
+<p>A supporting node SHOULD NOT send unsolicited commands during the Wake Up period.</p>
+<h1 id="Clock-CC"><a href="#Clock-CC" class="headerlink" title="Clock CC"></a>Clock CC</h1><p>A supporting node SHOULD NOT learn the current time with a Clock Get Command. </p>
+<p>A node SHOULD control the <strong>Time Command Class</strong> to read the current time from supporting nodes (time servers) or support the Clock Command Class and wait to be set the current time by a controlling node.</p>
+<p>A Z-Wave Plus node SHOULD issue a Clock Report Command via the Lifeline Association Group if they suspect to have inaccurate time and/or weekdays (e.g. after battery removal). </p>
+<h1 id="Time-CC"><a href="#Time-CC" class="headerlink" title="Time CC"></a>Time CC</h1><p>A supporting node MUST always advertise the Time Command Class in its NIF, regardless of the security bootstrapping outcome. </p>
+<p>For nodes based on a slave Role Type, it is RECOMMENDED to support a dedicated Association Group which issues the Time Get Command and/or the Date Get Command. </p>
+<h1 id="Time-Parameters-CC"><a href="#Time-Parameters-CC" class="headerlink" title="Time Parameters CC"></a>Time Parameters CC</h1><h1 id="Schedule-CC"><a href="#Schedule-CC" class="headerlink" title="Schedule CC"></a>Schedule CC</h1><h1 id="Central-Scene-CC"><a href="#Central-Scene-CC" class="headerlink" title="Central Scene CC"></a>Central Scene CC</h1><p>Virtual buttons MUST be numbered after physical push buttons or graphical button objects.</p>
+<p>In order to ensure a functioning network, the Slow Refresh capability MUST be enabled by default after inclusion.</p>
+<p>Multi Channel End Points SHOULD NOT support the Central Scene Command Class.</p>
+<h1 id="Multilevel-Sensor-CC"><a href="#Multilevel-Sensor-CC" class="headerlink" title="Multilevel Sensor CC"></a>Multilevel Sensor CC</h1>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.godoit.xyz/2018/05/20/Z-Wave_Certification/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="godoit">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/05/20/Z-Wave_Certification/" itemprop="url">
+                  Z-Wave Certification
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T13:14:00+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IoT/" itemprop="url" rel="index">
+                    <span itemprop="name">IoT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IoT/Z-Wave/" itemprop="url" rel="index">
+                    <span itemprop="name">Z-Wave</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/20/Z-Wave_Certification/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/20/Z-Wave_Certification/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/20/Z-Wave_Certification/" class="leancloud_visitors" data-flag-title="Z-Wave Certification">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="This-following-Command-Classes-MUST-always-be-in-the-NIF-if-supported"><a href="#This-following-Command-Classes-MUST-always-be-in-the-NIF-if-supported" class="headerlink" title="This following Command Classes MUST always be in the NIF if supported:"></a>This following Command Classes MUST always be in the NIF if supported:</h3><ul>
+<li>Application Status Command Class</li>
+<li>CRC-16 Encapsulation Command Class</li>
+<li>Inclusion Controller Command Class</li>
+<li>Multi Command Command Class</li>
+<li>Security 2 Command Class</li>
+<li>Supervision Command Class</li>
+<li>Time Command Class</li>
+<li>Transport Service Command Class</li>
+<li>Z-Wave Plus Info Command Class</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.godoit.xyz/2018/05/20/Z-Wave_Modules/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="godoit">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/05/20/Z-Wave_Modules/" itemprop="url">
+                  Z-Wave Modules
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T13:14:00+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IoT/" itemprop="url" rel="index">
+                    <span itemprop="name">IoT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IoT/Z-Wave/" itemprop="url" rel="index">
+                    <span itemprop="name">Z-Wave</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/20/Z-Wave_Modules/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/20/Z-Wave_Modules/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/20/Z-Wave_Modules/" class="leancloud_visitors" data-flag-title="Z-Wave Modules">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ZM5202"><a href="#ZM5202" class="headerlink" title="ZM5202"></a>ZM5202</h1><h1 id="ZM5101"><a href="#ZM5101" class="headerlink" title="ZM5101"></a>ZM5101</h1><p>128KB flash,16KB SRAM, 32MHz</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.godoit.xyz/2018/05/20/Z-Wave协议简析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="godoit">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/05/20/Z-Wave协议简析/" itemprop="url">
+                  Z-Wave协议简析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T13:14:00+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IoT/" itemprop="url" rel="index">
+                    <span itemprop="name">IoT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IoT/Z-Wave/" itemprop="url" rel="index">
+                    <span itemprop="name">Z-Wave</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/20/Z-Wave协议简析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/20/Z-Wave协议简析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/20/Z-Wave协议简析/" class="leancloud_visitors" data-flag-title="Z-Wave协议简析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-Z-Wave网络角色"><a href="#1-Z-Wave网络角色" class="headerlink" title="1 Z-Wave网络角色"></a>1 Z-Wave网络角色</h1><p>在一个Z-Wave网络中拥有两种类型的设备:Controller &amp; Slave。</p>
+<h2 id="1-1-Controllers"><a href="#1-1-Controllers" class="headerlink" title="1.1 Controllers"></a>1.1 Controllers</h2><p>Controller拥有完整的设备路由表，因此它可以和网络中所有的设备节点通信。Controller的功能会根据其何时进入网络而有所不同。例如，一个被用来创建网络的Controller将成为一个primary controller，其在网络中有且只有一个。在Z-Wave网络中，只有primary controller具有添加、删除节点的功能。因此，它保持拥有着最新的网络拓扑结构。其他通过primary controller添加进Z-Wave网络的controller称为secondary controller，其没有添加、删除节点的能力。</p>
+<h3 id="Portable-Controller"><a href="#Portable-Controller" class="headerlink" title="Portable Controller"></a>Portable Controller</h3><p>可移动的Controller，通常为电池供电。</p>
+<h3 id="Static-Controller"><a href="#Static-Controller" class="headerlink" title="Static Controller"></a>Static Controller</h3><p>不可移动，长供电。</p>
+<h3 id="Installer-Controller"><a href="#Installer-Controller" class="headerlink" title="Installer Controller"></a>Installer Controller</h3><p>它是一个Portable Controller，但可能比Portable Controller稍微多出来一点功能。</p>
+<h3 id="Bridge-Controller"><a href="#Bridge-Controller" class="headerlink" title="Bridge Controller"></a>Bridge Controller</h3><p>An extended static controller.</p>
+<h2 id="1-2-Slaves"><a href="#1-2-Slaves" class="headerlink" title="1.2 Slaves"></a>1.2 Slaves</h2><h1 id="2-如何进行开发"><a href="#2-如何进行开发" class="headerlink" title="2 如何进行开发"></a>2 如何进行开发</h1><p>拿到一款产品定义之后，我们要知道如何进行开发，下面有一些步骤：</p>
+<ol>
+<li>根据产品定义选择最合适的Device Type</li>
+<li>选择对应的Role Type</li>
+<li>根据选定的Device Type和Role Type定义Command Classes</li>
+<li>Recommended Feature</li>
+<li>Additional Feature</li>
+</ol>
+<h1 id="3-设备类型-Device-Type"><a href="#3-设备类型-Device-Type" class="headerlink" title="3 设备类型(Device Type)"></a>3 设备类型(Device Type)</h1><p>Z-Wave Plus Info Command Class必须被放在NIF的Command Class列表的最前端，用以来区分设备是一个Z-Wave Device，还是一个Z-Wave Plus Device。</p>
+<p>Device Type由两个字节表示，由Z-Wave Generic Device Class 和 Z-Wave Specific Device Class组成。</p>
+<h1 id="4-模块的烧录接口"><a href="#4-模块的烧录接口" class="headerlink" title="4 模块的烧录接口"></a>4 模块的烧录接口</h1><p>Z-Wave模块的烧录接口包含SPI、UART、USB，但不同模块提供的接口是不同的。尽可能的使用SPI接口。另外，如果想使用USB接口烧录固件，那么要烧录的模块必须已经烧录过支持USB通信功能的代码，及必须通过SPI/UART先烧录过支持USB工能的代码，后面才可以通过USB来烧录或升级固件。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://blog.godoit.xyz/2017/09/07/ESP8266开发之MQTT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1342,7 +2120,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1353,7 +2131,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1364,7 +2142,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1425,8 +2203,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

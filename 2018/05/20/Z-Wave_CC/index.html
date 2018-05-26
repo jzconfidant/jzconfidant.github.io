@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ESP8266," />
+  <meta name="keywords" content="Z-Wave," />
 
 
 
@@ -87,17 +87,19 @@
 
 
 
-<meta name="description" content="1. MQTT服务器mqtt broker有很多，有Mosquitto、EMQ等等，在这里我就不做介绍了，可以去官网看看，中文资料也比较齐全。这里我选择Mosquitto作为我的broker服务器，如何配置参考这里。 2. MQTT设备端用ESP8266开发MQTT程序非常的简单，因为在其例程中已为我们提供了MQTT库及参考示例，我们只要在其基础之上少做修改即可。">
-<meta name="keywords" content="ESP8266">
+<meta name="description" content="All Switch [OBSOLETED]New implementations MUST NOT support this Command Class. Controlling nodes MUST use S2 Multicast mechanism in order to achieve the All On and All Off functionality Basic CCThe B">
+<meta name="keywords" content="Z-Wave">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ESP8266开发之MQTT">
-<meta property="og:url" content="http://blog.godoit.xyz/2017/09/07/ESP8266开发之MQTT/index.html">
+<meta property="og:title" content="Z-Wave Command Class">
+<meta property="og:url" content="http://blog.godoit.xyz/2018/05/20/Z-Wave_CC/index.html">
 <meta property="og:site_name" content="godoit">
-<meta property="og:description" content="1. MQTT服务器mqtt broker有很多，有Mosquitto、EMQ等等，在这里我就不做介绍了，可以去官网看看，中文资料也比较齐全。这里我选择Mosquitto作为我的broker服务器，如何配置参考这里。 2. MQTT设备端用ESP8266开发MQTT程序非常的简单，因为在其例程中已为我们提供了MQTT库及参考示例，我们只要在其基础之上少做修改即可。">
-<meta property="og:updated_time" content="2017-09-14T07:34:20.065Z">
+<meta property="og:description" content="All Switch [OBSOLETED]New implementations MUST NOT support this Command Class. Controlling nodes MUST use S2 Multicast mechanism in order to achieve the All On and All Off functionality Basic CCThe B">
+<meta property="og:image" content="https://i.imgur.com/JJaR4E4.png">
+<meta property="og:updated_time" content="2018-05-26T07:20:59.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ESP8266开发之MQTT">
-<meta name="twitter:description" content="1. MQTT服务器mqtt broker有很多，有Mosquitto、EMQ等等，在这里我就不做介绍了，可以去官网看看，中文资料也比较齐全。这里我选择Mosquitto作为我的broker服务器，如何配置参考这里。 2. MQTT设备端用ESP8266开发MQTT程序非常的简单，因为在其例程中已为我们提供了MQTT库及参考示例，我们只要在其基础之上少做修改即可。">
+<meta name="twitter:title" content="Z-Wave Command Class">
+<meta name="twitter:description" content="All Switch [OBSOLETED]New implementations MUST NOT support this Command Class. Controlling nodes MUST use S2 Multicast mechanism in order to achieve the All On and All Off functionality Basic CCThe B">
+<meta name="twitter:image" content="https://i.imgur.com/JJaR4E4.png">
 
 
 
@@ -125,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.godoit.xyz/2017/09/07/ESP8266开发之MQTT/"/>
+  <link rel="canonical" href="http://blog.godoit.xyz/2018/05/20/Z-Wave_CC/"/>
 
 
 
 
 
-  <title> ESP8266开发之MQTT | godoit </title>
+  <title> Z-Wave Command Class | godoit </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.godoit.xyz/2017/09/07/ESP8266开发之MQTT/">
+    <link itemprop="mainEntityOfPage" href="http://blog.godoit.xyz/2018/05/20/Z-Wave_CC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hong">
@@ -281,7 +283,7 @@
             
             
               
-                ESP8266开发之MQTT
+                Z-Wave Command Class
               
             
           </h1>
@@ -296,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T15:00:00+08:00">
-                2017-09-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T13:14:00+08:00">
+                2018-05-20
               </time>
             
 
@@ -319,8 +321,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/嵌入式/" itemprop="url" rel="index">
-                    <span itemprop="name">嵌入式</span>
+                  <a href="/categories/IoT/" itemprop="url" rel="index">
+                    <span itemprop="name">IoT</span>
                   </a>
                 </span>
 
@@ -330,8 +332,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/嵌入式/ESP8266/" itemprop="url" rel="index">
-                    <span itemprop="name">ESP8266</span>
+                  <a href="/categories/IoT/Z-Wave/" itemprop="url" rel="index">
+                    <span itemprop="name">Z-Wave</span>
                   </a>
                 </span>
 
@@ -348,9 +350,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/07/ESP8266开发之MQTT/#comments" itemprop="discussionUrl">
+                <a href="/2018/05/20/Z-Wave_CC/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/07/ESP8266开发之MQTT/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/05/20/Z-Wave_CC/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -358,7 +360,7 @@
 
           
           
-             <span id="/2017/09/07/ESP8266开发之MQTT/" class="leancloud_visitors" data-flag-title="ESP8266开发之MQTT">
+             <span id="/2018/05/20/Z-Wave_CC/" class="leancloud_visitors" data-flag-title="Z-Wave Command Class">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,9 +389,56 @@
       
 
       
-        <h1 id="1-MQTT服务器"><a href="#1-MQTT服务器" class="headerlink" title="1. MQTT服务器"></a>1. MQTT服务器</h1><p>mqtt broker有很多，有<a href="https://mosquitto.org/" target="_blank" rel="external">Mosquitto</a>、<a href="http://emqtt.com/" target="_blank" rel="external">EMQ</a>等等，在这里我就不做介绍了，可以去官网看看，中文资料也比较齐全。这里我选择Mosquitto作为我的broker服务器，如何配置参考<a href="https://docs.loraserver.io/overview/" target="_blank" rel="external">这里</a>。</p>
-<h1 id="2-MQTT设备端"><a href="#2-MQTT设备端" class="headerlink" title="2. MQTT设备端"></a>2. MQTT设备端</h1><p>用ESP8266开发MQTT程序非常的简单，因为在其例程中已为我们提供了MQTT库及参考示例，我们只要在其基础之上少做修改即可。</p>
-
+        <p><img src="https://i.imgur.com/JJaR4E4.png" alt=""></p>
+<h1 id="All-Switch-OBSOLETED"><a href="#All-Switch-OBSOLETED" class="headerlink" title="All Switch [OBSOLETED]"></a>All Switch [OBSOLETED]</h1><p>New implementations MUST NOT support this Command Class. Controlling nodes MUST use S2 Multicast mechanism in order to achieve the All On and All Off functionality</p>
+<h1 id="Basic-CC"><a href="#Basic-CC" class="headerlink" title="Basic CC"></a>Basic CC</h1><p>The Basic Command Class MUST NOT be advertised in the Node Information Frame.</p>
+<p>The Basic Command Class MUST NOT be advertised in the Security Commands Supported Report (S0 as well as S2)</p>
+<p>A securely included node MAY support the Basic Command Class at the highest security level but it MUST NOT support the Basic Command Class at any lower security level or non-securely.</p>
+<h1 id="Association-CC"><a href="#Association-CC" class="headerlink" title="Association CC"></a>Association CC</h1><h1 id="Association-Group-Information-CC-AGI"><a href="#Association-Group-Information-CC-AGI" class="headerlink" title="Association Group Information CC (AGI)"></a>Association Group Information CC (AGI)</h1><p>If a node implements Multi Channel End Points and supports the AGI Command Class, each individual End Point MUST support the AGI Command Class.</p>
+<p>A manufacturer MAY add additional commands to the Lifeline group. Refer to </p>
+<blockquote>
+<p>Sigma Designs, SDS11847, Z-Wave Plus Device Types Specification.</p>
+</blockquote>
+<p>A node MAY send additional commands via the lifeline association group to reflect the state of the node. A node MUST NOT send the following via the lifeline:</p>
+<ul>
+<li>Obsoleted commands or commands belonging to an obsoleted Command Class</li>
+<li>Set or Get commands</li>
+<li>Redundant commands. (for example, if Multilevel Switch CC and Window Covering CC provide the same functionality for a node, the node MUST NOT send both Multilevel Switch Report and Window Covering Report)</li>
+</ul>
+<h3 id="Profile"><a href="#Profile" class="headerlink" title="Profile"></a>Profile</h3><ul>
+<li>General profiles</li>
+<li>Control profiles</li>
+<li>Sensor profiles</li>
+<li>Notification profiles</li>
+</ul>
+<h1 id="Multi-Channel-CC"><a href="#Multi-Channel-CC" class="headerlink" title="Multi Channel CC"></a>Multi Channel CC</h1><p>A node supporting this Command Class MUST set the Optional Functionality bit in its NIF.</p>
+<p>A Multi Channel device MAY implement from 1 to 127 end points.</p>
+<p>A Multi Channel device MUST implement all application functionality in End Points. </p>
+<p>Multi Channel Encapsulation is not used between Root Devices.</p>
+<p>A controlling device MAY use Multi Channel encapsulation to communicate with Multi Channel End Points in other devices. If such a controlling device does not implement any End Points, the device MUST NOT advertise the Multi Channel Command Class in the Node Information Frame.</p>
+<p>It is seen that the mapping of application functionality to the Root Device depends heavily on the actual product feature set. However, a few principles apply:</p>
+<ol>
+<li>The Root Device provides access to the primary functionality of the actual product.</li>
+<li>The Root Device of a Multi Channel device does not implement any application functionality that cannot be reached via End Points.</li>
+<li>The Root Device of a Multi Channel always presents functionality, which can also be reached via End Point 1. If it makes sense in the actual product, a Root Device command may affect more End Points than End Point 1.</li>
+</ol>
+<p>The Root Device SHOULD NOT advertise the application functionality of any dynamic End Point.</p>
+<p>The Root Device of a Multi Channel device MUST NOT advertise any application functionality that cannot be reached via one or more End Points.</p>
+<h1 id="Multi-Channel-Association-CC"><a href="#Multi-Channel-Association-CC" class="headerlink" title="Multi Channel Association CC"></a>Multi Channel Association CC</h1><p>A controlling device SHOULD NOT create End Point associations to dynamic Multi Channel End Points.</p>
+<p>End Points SHOULD NOT implement the Lifeline Association Group. End Points SHOULD report that zero NodeIDs are supported for association group 1</p>
+<h1 id="Wake-Up-CC"><a href="#Wake-Up-CC" class="headerlink" title="Wake Up CC"></a>Wake Up CC</h1><p>The Wake Up period starts when the supporting node issues a Wake Up Notification and it ends either 10 seconds after the last received/transmitted frame or at the reception of a Wake Up No More Information Command by the Wake Up destination.</p>
+<p>The Wake Up Notification Command Class MUST NOT be covered by any association group. This also means that the Wake Up Notification Command Class MUST NOT be covered by the Lifeline association group.</p>
+<p>A node sending periodical or triggered unsolicited commands at the same time it wakes up SHOULD send the unsolicited commands before the Wake Up Notification Command.</p>
+<p>A supporting node SHOULD NOT send unsolicited commands during the Wake Up period.</p>
+<h1 id="Clock-CC"><a href="#Clock-CC" class="headerlink" title="Clock CC"></a>Clock CC</h1><p>A supporting node SHOULD NOT learn the current time with a Clock Get Command. </p>
+<p>A node SHOULD control the <strong>Time Command Class</strong> to read the current time from supporting nodes (time servers) or support the Clock Command Class and wait to be set the current time by a controlling node.</p>
+<p>A Z-Wave Plus node SHOULD issue a Clock Report Command via the Lifeline Association Group if they suspect to have inaccurate time and/or weekdays (e.g. after battery removal). </p>
+<h1 id="Time-CC"><a href="#Time-CC" class="headerlink" title="Time CC"></a>Time CC</h1><p>A supporting node MUST always advertise the Time Command Class in its NIF, regardless of the security bootstrapping outcome. </p>
+<p>For nodes based on a slave Role Type, it is RECOMMENDED to support a dedicated Association Group which issues the Time Get Command and/or the Date Get Command. </p>
+<h1 id="Time-Parameters-CC"><a href="#Time-Parameters-CC" class="headerlink" title="Time Parameters CC"></a>Time Parameters CC</h1><h1 id="Schedule-CC"><a href="#Schedule-CC" class="headerlink" title="Schedule CC"></a>Schedule CC</h1><h1 id="Central-Scene-CC"><a href="#Central-Scene-CC" class="headerlink" title="Central Scene CC"></a>Central Scene CC</h1><p>Virtual buttons MUST be numbered after physical push buttons or graphical button objects.</p>
+<p>In order to ensure a functioning network, the Slow Refresh capability MUST be enabled by default after inclusion.</p>
+<p>Multi Channel End Points SHOULD NOT support the Central Scene Command Class.</p>
+<h1 id="Multilevel-Sensor-CC"><a href="#Multilevel-Sensor-CC" class="headerlink" title="Multilevel Sensor CC"></a>Multilevel Sensor CC</h1>
       
     </div>
 
@@ -423,7 +472,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ESP8266/" rel="tag"># ESP8266</a>
+            <a href="/tags/Z-Wave/" rel="tag"># Z-Wave</a>
           
         </div>
       
@@ -436,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/07/ESP8266开发之cJSON/" rel="next" title="ESP8266开发之cJSON">
-                <i class="fa fa-chevron-left"></i> ESP8266开发之cJSON
+              <a href="/2018/05/20/Z-Wave_Certification/" rel="next" title="Z-Wave Certification">
+                <i class="fa fa-chevron-left"></i> Z-Wave Certification
               </a>
             
           </div>
@@ -446,8 +495,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/08/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/07/ESP8266开发之前期准备/" rel="prev" title="ESP8266开发之前期准备">
+                ESP8266开发之前期准备 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -604,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-MQTT服务器"><span class="nav-text">1. MQTT服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-MQTT设备端"><span class="nav-text">2. MQTT设备端</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#All-Switch-OBSOLETED"><span class="nav-text">All Switch [OBSOLETED]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-CC"><span class="nav-text">Basic CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Association-CC"><span class="nav-text">Association CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Association-Group-Information-CC-AGI"><span class="nav-text">Association Group Information CC (AGI)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Profile"><span class="nav-text">Profile</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Multi-Channel-CC"><span class="nav-text">Multi Channel CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Multi-Channel-Association-CC"><span class="nav-text">Multi Channel Association CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Wake-Up-CC"><span class="nav-text">Wake Up CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Clock-CC"><span class="nav-text">Clock CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Time-CC"><span class="nav-text">Time CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Time-Parameters-CC"><span class="nav-text">Time Parameters CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Schedule-CC"><span class="nav-text">Schedule CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Central-Scene-CC"><span class="nav-text">Central Scene CC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Multilevel-Sensor-CC"><span class="nav-text">Multilevel Sensor CC</span></a></li></ol></div>
             
 
           </div>
@@ -750,9 +799,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://blog.godoit.xyz/2017/09/07/ESP8266开发之MQTT/';
-          this.page.identifier = '2017/09/07/ESP8266开发之MQTT/';
-          this.page.title = 'ESP8266开发之MQTT';
+          this.page.url = 'http://blog.godoit.xyz/2018/05/20/Z-Wave_CC/';
+          this.page.identifier = '2018/05/20/Z-Wave_CC/';
+          this.page.title = 'Z-Wave Command Class';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Aamir.disqus.com/embed.js';
